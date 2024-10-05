@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Review Random Response Generator</title>
+		<meta http-equiv="content-language" content="en">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="chrome\data\interface\normalize.css">
+		<link type="text/css" rel="stylesheet" href="chrome\data\interface\style.css">
+
+	</head>
+	<body>
+		<div class="ct-inner-content">
+		  <section id="codehemu-section-1" class="ct-section">
+		    <div class="ct-section-inner-wrap">
+		      <h1 id="codehemu-headline-1" class="ct-headline">Revolutionize Your Review Responses with Random Response Generation<br> </h1>
+		    </div>
+		  </section>
+
+		  <section id="codehemu-section-2" class=" ct-section">
+		    <div class="ct-section-inner-wrap">
+		      <div id="codehemu_new_columns_1" class="ct-new-columns">
+		        <div id="div_block" class="ct-div-block">
+		          <div id="div_block-1" class="ct-div-block" style="display: block;">
+		            <div class="oxy-rich-text">
+		              <p>Use our  Review Random Response Generator to cut your review reply time in half.&nbsp;&nbsp;Simply paste the review information the form below and our <a class="extensionurl" href="#">extension</a> will generate a customized response based on <a href="" target="_blank" rel="noopener">reviewer response best practices</a>.&nbsp;<br><br>Whether you're responding to positive or negative review, this tool helps you craft the perfect message that shows you value your customers and their opinions.</p>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div id="div_block-2" class="ct-div-block">
+		          <div id="codehemu_block-1" class="ct-code-block">
+		            <div class="form-body">
+		              <form data-cb-wrapper="true">
+		                <div class="name-ratings">
+		                  <div class="name">
+		                    <label for="reviewer-name">Reviewer Name<span class="required">Required</span></label>
+		                    <input type="text" name="reviewer-name" id="reviewer-name" aria-label="Reviewer Name"/>
+		                  </div>
+		                  <div class="ratings">
+		                    <label for="star-ratings" id="ratings-label">ratings<span class="required">Required</span></label>
+		                    <div class="star-ratings-instruction-container">
+		                      <div class="star-container rating" role="radiogroup" aria-labelledby="ratings-label">
+							      <input type="radio" name="rating" id="rating-5">
+							      <label for="rating-5"></label>
+							      <input type="radio" name="rating" id="rating-4">
+							      <label for="rating-4"></label>
+							      <input type="radio" name="rating" id="rating-3">
+							      <label for="rating-3"></label>
+							      <input type="radio" name="rating" id="rating-2">
+							      <label for="rating-2"></label>
+							      <input type="radio" name="rating" id="rating-1">
+							      <label for="rating-1"></label>
+		                      </div>
+		                      <input type="hidden" name="ratings" id="ratings" required="" aria-describedby="ratings-instruction">
+		                      <span id="ratings-instruction" class="instruction-text">Select the ratings of the review received.</span>
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="review">
+		                  <label for="review-text">Additional Response<span class="optional">Optional</span></label>
+		                  <textarea name="review-text" id="review-text" cols="30" rows="5" maxlength="1500" placeholder="Additional response for the Review Response[contact us/ product or service information] " aria-label="Review Text"></textarea>
+		                </div>
+		                <div class="flex-container flexfix">
+		                  <div class="tonediv">
+		                    <label for="tone">Word Length<span class="optional">Optional</span></label>
+		                    <select name="tone" id="tone" required="" aria-label="Tone">
+		                      <option value="50" selected="">50 words</option>
+		                      <option value="100">100 words</option>
+		                    </select>
+		                  </div>
+		                  <div class="industrydiv">
+		                    <label for="industry-list">Product Name<span class="optional">Optional</span></label>
+		                    <input type="text" id="industry-list" name="industry" aria-label="Industry" placeholder="">
+		                
+
+		                  </div>
+		                  <div class="cta">
+		                    <button type="button" class="genbtn" id="submit-review">Generate Response</button>
+		                  </div>
+		                </div>
+		                <div id="error" class="animate bounce"></div>
+		              </form>
+		            </div>
+
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+
+
+		  <section id="codehemu-section-3" class=" ct-section">
+		    <div class="ct-section-inner-wrap">
+		      <h1 id="codehemu-headline-3" class="ct-headline">REPLY TO YOUR REVIEW</h1>
+		      <div id="codehemu_new_columns_2" class="ct-new-columns">
+		        <div id="div_block-211" class="ct-div-block gen-width">
+		          <div id="code_block-211" class="ct-code-block">
+		            <div id="response1">
+		              <div id="generated-review">
+		                <h3>Generated Review Response:</h3>
+		                <span class="review-text" id="generate-review-paragraph"></span>    
+		                <span id="ai_dot">⚫</span>
+		                <p id="feedback-button">
+		                  <button id="like-button" value="L">Like</button>
+		                  <button id="dislike-button" value="D">Dislike</button>
+		                </p>
+		                <button id="copyBtn">Copy Response</button>
+		                 <button id="speak">🔊Speak</button>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		        <div id="div_block-212" class="ct-div-block gen-width">
+		          <div id="code_block-212" class="ct-code-block">
+		            <div id="response2">
+		              <div id="generated-review2">
+		                <h3>Generated Review Response:</h3>
+		                <span class="review-text2" id="generate-review-paragraph2"></span>
+		                <span id="ai_dot1">⚫</span>
+		                <p id="feedback-button2">
+		                  <button id="like-button2" value="L">Like</button>
+		                  <button id="dislike-button2" value="D">Dislike</button>
+		                </p>
+		                <button id="copyBtn2">Copy Response</button>
+		                <button id="speak2">🔊Speak</button>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      <button id="refreshPageButton" class="ct-link-button">Re Generate</button> 
+		    </div>
+		  </section>
+		</div>
+		<script type="text/javascript" src="chrome\data\interface\generated.js"></script>
+		<script type="text/javascript" src="chrome\data\interface\rating.js"></script>
+		<script type="text/javascript" src="chrome\data\interface\index.js"></script>
+	</body>
+</html>
