@@ -35,7 +35,7 @@
 		                <div class="name-ratings">
 		                  <div class="name">
 		                    <label for="reviewer-name">Reviewer Name<span class="required">Required</span></label>
-		                    <input type="text" name="reviewer-name" id="reviewer-name" aria-label="Reviewer Name">
+		                    <input type="text" name="reviewer-name" id="reviewer-name" aria-label="Reviewer Name"/>
 		                  </div>
 		                  <div class="ratings">
 		                    <label for="star-ratings" id="ratings-label">ratings<span class="required">Required</span></label>
@@ -99,12 +99,14 @@
 		            <div id="response1">
 		              <div id="generated-review">
 		                <h3>Generated Review Response:</h3>
-		                <p class="review-text" id="generate-review-paragraph"></p>
+		                <span class="review-text" id="generate-review-paragraph"></span>    
+		                <span id="ai_dot">⚫</span>
 		                <p id="feedback-button">
-		                  <button id="like-button">Like</button>
-		                  <button id="dislike-button">Dislike</button>
+		                  <button id="like-button" value="L">Like</button>
+		                  <button id="dislike-button" value="D">Dislike</button>
 		                </p>
 		                <button id="copyBtn">Copy Response</button>
+		                 <button id="speak">🔊Speak</button>
 		              </div>
 		            </div>
 		          </div>
@@ -114,12 +116,14 @@
 		            <div id="response2">
 		              <div id="generated-review2">
 		                <h3>Generated Review Response:</h3>
-		                <p class="review-text2" id="generate-review-paragraph2"></p>
+		                <span class="review-text2" id="generate-review-paragraph2"></span>
+		                <span id="ai_dot1">⚫</span>
 		                <p id="feedback-button2">
-		                  <button id="like-button2">Like</button>
-		                  <button id="dislike-button2">Dislike</button>
+		                  <button id="like-button2" value="L">Like</button>
+		                  <button id="dislike-button2" value="D">Dislike</button>
 		                </p>
 		                <button id="copyBtn2">Copy Response</button>
+		                <button id="speak2">🔊Speak</button>
 		              </div>
 		            </div>
 		          </div>
@@ -129,6 +133,8 @@
 		    </div>
 		  </section>
 		</div>
+		<script type="text/javascript" src="generated.js"></script>
+		<script type="text/javascript" src="rating.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>
