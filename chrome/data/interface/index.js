@@ -24,7 +24,8 @@ var reviewCode,
     speak,
     speak2,
     anime,
-    anime1;
+    anime1,
+    languge;
 
 const info = () =>{
   reviewerName = document.querySelector("#reviewer-name");
@@ -83,14 +84,24 @@ const info = () =>{
     storageLikeDislike(reviewCode2, reviewDislike2, reviewLike2);
   });
 
+  if (speechSynthesis == undefined) return;
+
+  const message = new SpeechSynthesisUtterance();
+  message.volume = 1; // Volume range = 0 - 1
+  message.rate = 1.1; // Speed of the text read , default 1 // change voice
+
   speak.addEventListener("click", () => {
-      full_response == null ?  null : full_response == "" ? null : 
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance(full_response));
+    message.lang = languge == null ? 'en' : languge;
+    message.text = full_response;
+    full_response == null ?  null : full_response == "" ? null : 
+    window.speechSynthesis.speak(message);
   });
 
   speak2.addEventListener("click", () => {
-      full_response1 == null ?  null : full_response1 == "" ? null : 
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance(full_response1));
+    message.lang = languge == null ? 'en' : languge;
+    message.text = full_response1;
+    full_response1 == null ?  null : full_response1 == "" ? null : 
+    window.speechSynthesis.speak(message);
   });
 
   copyResponse();
@@ -146,9 +157,9 @@ const generatedBtn = (reviewerName, productName) => {
 }
 
 const generatingReview = async(name, productName) =>{
-  var {response_1 , response_2, random_1, random_2} = await generatedResponse(name, rating(), words.value, productName);
+  var {response_1 , response_2, random_1, random_2, LANGUAGE_CODE} = await generatedResponse(name, rating(), words.value, productName);
   if (response_1 == null && response_2 == null) return;
-
+  languge = LANGUAGE_CODE;
   regenerate.style.display = "block";
   generatedReview.style.display = "block";
   generatedReview2.style.display = "block";

@@ -87,10 +87,11 @@ var core = {
       }
 
       if (tab && rating !=0 && rating < 6 && reviewerName != "") {
-          var {response_1 , response_2, random_1, random_2} = await generatedResponse(reviewerName, rating, 50, "service");
+          var {response_1 , response_2, random_1, random_2, LANGUAGE_CODE} = await generatedResponse(reviewerName, rating, 50, "service");
           if (response_1 == null) return;
           config.clipboard = response_1;
           app.storage.write("response", response_1);
+          app.storage.write("languge", LANGUAGE_CODE);
           const url = app.interface.new_path + '?' + menu_Id;
           interface_height = app.interface.height(response_1);
           app.interface.create(url,510,interface_height,null);

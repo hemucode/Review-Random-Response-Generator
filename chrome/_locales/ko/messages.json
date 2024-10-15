@@ -100,14 +100,5 @@
    },
    "v_star_rating":{
       "message":"😍 5점 응답 생성됨"
-   },
-   "good_morning":{
-      "message":"좋은 아침입니다"
-   },
-   "good_afternoon":{
-      "message":"좋은 오후입니다"
-   },
-   "good_evening":{
-      "message":"좋은 저녁입니다"
    }
 }

@@ -100,14 +100,5 @@
    },
    "v_star_rating":{
       "message":"😍 Resposta de 5 estrelas gerada"
-   },
-   "good_morning":{
-      "message":"Bom dia"
-   },
-   "good_afternoon":{
-      "message":"Boa tarde"
-   },
-   "good_evening":{
-      "message":"Boa noite"
    }
 }

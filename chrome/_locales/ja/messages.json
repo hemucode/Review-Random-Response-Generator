@@ -100,14 +100,5 @@
    },
    "v_star_rating":{
       "message":"😍 5 つ星の回答が生成されました"
-   },
-   "good_morning":{
-      "message":"おはようございます"
-   },
-   "good_afternoon":{
-      "message":"こんにちは"
-   },
-   "good_evening":{
-      "message":"こんばんは"
    }
 }

@@ -1,5 +1,6 @@
 RATING_DATA_ES = [
     {
+	"TIMING": ["Buenos días", "Buenas tardes", "Buenas noches"],
     "GREETING": [
 		"Hola... ${name}",
 		"Hola, ${name}",

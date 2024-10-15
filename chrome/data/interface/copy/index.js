@@ -12,6 +12,7 @@ const info = async () =>{
   var responsePromise = new Promise(function(resolve, reject){
           chrome.storage.local.get({
             "response": "",
+            "languge": "en",
           }, function(options){
               resolve(options);
           })
@@ -19,10 +20,11 @@ const info = async () =>{
 
   const responseOptions = await responsePromise;
   const response = responseOptions.response;
+  const languge = responseOptions.languge;
 
   response == null ? null:
   response =="" ? null:
-  generatingReview(response),copyResponse();
+  generatingReview(response,languge),copyResponse();
 
 }
 
@@ -45,14 +47,14 @@ domReady(() => {
 })
 
 
-const generatingReview = (response) =>{
+const generatingReview = (response,languge) =>{
   copyBtn.disabled = true;
   speak.disabled = true;
   ai_dot.style.visibility = "visible";
   const words2 = response.split(" ");
 
   speak.addEventListener("click",()=>{
-    textToSpeech(response);
+    textToSpeech(response,languge);
   },false)
 
   i = 0;
@@ -71,8 +73,14 @@ const generatingReview = (response) =>{
 }
 
 
-const textToSpeech = (msg) =>{
-  var new_msg = new SpeechSynthesisUtterance(msg);
-  window.speechSynthesis.speak(new_msg);
+const textToSpeech = (msg, voice) =>{
+  if (speechSynthesis == undefined) return;
+  const message = new SpeechSynthesisUtterance();
+  message.volume = 1; // Volume range = 0 - 1
+  message.rate = 1.1; // Speed of the text read , default 1 // change voice
+  message.lang = voice;
+  console.log(voice)
+  message.text = msg;
+  window.speechSynthesis.speak(message);
 }
 

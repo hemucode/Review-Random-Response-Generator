@@ -1,5 +1,6 @@
 RATING_DATA_KO = [
     {
+    "TIMING": ["좋은 아침입니다", "좋은 오후입니다", "좋은 저녁입니다"],
     "GREETING": [
         "안녕.. ${name}",
         "안녕, ${name}",

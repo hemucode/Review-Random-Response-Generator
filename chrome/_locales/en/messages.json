@@ -100,14 +100,5 @@
    },
    "v_star_rating":{
       "message" :"😍 5 Star Response Generated"
-   },   
-   "good_morning":{
-      "message" :"Good morning"
-   },
-   "good_afternoon":{
-      "message" :"Good afternoon"
-   },
-   "good_evening":{
-      "message" :"Good evening"
    }
 }

@@ -1,4 +1,5 @@
 var RATING_ARRAY = null,
+    LANGUAGE_CODE = "en",
     DEL = RATING_DATA_DE[0], 
     ENL = RATING_DATA_EN[0],
     ESL = RATING_DATA_ES[0],
@@ -19,17 +20,15 @@ const generatedResponse  = async(name, rating, words, product)=>{
         })     
     });
     var langOptions = await detectPromise;
-  
     const lang = langOptions.languages[0] == null ? null : langOptions.languages[0].language;
-
-    RATING_ARRAY = lang == null ? LangSwitch(chrome.i18n.getMessage("language_code")) : 
-    LangSwitch(lang) != null ? LangSwitch(lang) : ENL;
-
+    LANGUAGE_CODE = lang == null ? chrome.i18n.getMessage("language_code") : LangSwitch(lang) != null ? lang : "en";
   }else if (navigator != null) {
-    RATING_ARRAY = LangSwitch(navigator.language) != null ? LangSwitch(navigator.language) : ENL;
+    LANGUAGE_CODE = LangSwitch(navigator.language) != null ? navigator.language : "en";
   }else{
-    RATING_ARRAY = ENL;
+    LANGUAGE_CODE = "en";
   }
+
+  RATING_ARRAY = LangSwitch(LANGUAGE_CODE);
 
   rating_array = RATING_ARRAY[`${rating}S${words}WR`];
   random_1 = Math.floor(Math.random() * rating_array.length);
@@ -43,7 +42,7 @@ ${rating_1}`;
     response_2 = `${greeting(name,rating)}
 ${rating_2}`;
 
-    return {response_1 , response_2, random_1, random_2};
+    return {response_1 , response_2, random_1, random_2, LANGUAGE_CODE};
 }
 
 const greeting = (name, rating) =>{
@@ -55,11 +54,11 @@ const timing = () =>{
   var today = new Date(),
   curHr = today.getHours();
   if (curHr < 12) {
-    return chrome.i18n != null ? chrome.i18n.getMessage("good_morning") : "Good morning";
+    return RATING_ARRAY["TIMING"][0];
   } else if (curHr < 18) {
-    return chrome.i18n != null ? chrome.i18n.getMessage("good_afternoon") : "Good afternoon";
+    return RATING_ARRAY["TIMING"][1];
   } else {
-    return chrome.i18n != null ? chrome.i18n.getMessage("good_evening") : "Good evening";
+    return RATING_ARRAY["TIMING"][2];
   }
 }
 

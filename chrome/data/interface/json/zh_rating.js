@@ -1,5 +1,6 @@
 RATING_DATA_ZH = [
     {	
+    "TIMING": ["早上好", "下午好", "晚上好"],  
     "GREETING": [
 		"嗨... ${name}",
 		"嗨，${name}",

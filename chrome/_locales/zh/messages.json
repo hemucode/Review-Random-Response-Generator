@@ -100,14 +100,5 @@
    },
    "v_star_rating":{
       "message":"😍 已生成 5 星回复"
-   },
-   "good_morning":{
-      "message":"早上好"
-   },
-   "good_afternoon":{
-      "message":"下午好"
-   },
-   "good_evening":{
-      "message":"晚上好"
    }
 }
