@@ -1,0 +1,113 @@
+{
+   "app_description":{
+      "message":"es una herramienta que genera automáticamente respuestas personalizadas y relevantes a las reseñas de los clientes."
+   },
+   "app_description_2":{
+      "message":"Utilice nuestro generador de respuestas aleatorias a reseñas para reducir a la mitad el tiempo de respuesta a sus reseñas. Simplemente pegue la información de la reseña en el formulario que aparece a continuación y nuestro"
+   },
+   "app_description_3":{
+      "message":"generará una respuesta personalizada basada en"
+   },
+   "app_description_4":{
+      "message":"mejores prácticas de respuesta a reseñas."
+   },
+   "app_description_5":{
+      "message":"Ya sea que responda a una reseña positiva o negativa, esta herramienta lo ayuda a crear el mensaje perfecto que demuestre que valora a sus clientes y sus opiniones."
+   },
+   "app_name":{
+      "message":"Generador de respuestas aleatorias para reseñas"
+   },
+   "app_heading":{
+      "message":"Revolucione sus respuestas a reseñas con la generación de respuestas aleatorias"
+   },
+   "reviewer_name":{
+      "message":"Nombre del revisor"
+   },
+   "reviewer_name_error":{
+      "message":"Ingrese el nombre del revisor"
+   },
+   "ratings":{
+      "message":"Calificaciones"
+   },
+   "rating_description":{
+      "message":"Seleccione las calificaciones de la reseña recibida"
+   },
+   "additional_response":{
+      "message":"Respuesta adicional"
+   },
+   "additional_response_place":{
+      "message":"Respuesta adicional para la respuesta de la reseña [contáctenos/información del producto o servicio]"
+   },
+   "word_length":{
+      "message":"Longitud de la palabra"
+   },
+   "word_50":{
+      "message":"50 palabras"
+   },
+   "word_100":{
+      "message":"100 palabras"
+   },
+   "product_name":{
+      "message":"Nombre del producto"
+   },
+   "required":{
+      "message":"Obligatorio"
+   },
+   "optional":{
+      "message":"Opcional"
+   },
+   "generate_response":{
+      "message":"Generar respuesta"
+   },
+   "replay_to_your_review":{
+      "message":"RESPONDER A TU RESEÑA"
+   },
+   "generated_review_response":{
+      "message":"Respuesta a la reseña generada:"
+   },
+   "like":{
+      "message":"Me gusta"
+   },
+   "dislike":{
+      "message":"No me gusta"
+   },
+   "copy_response":{
+      "message":"Copiar respuesta"
+   },
+   "speak":{
+      "message":"🔊Hablar"
+   },
+   "re_generate":{
+      "message":"Volver a generar"
+   },
+   "extension":{
+      "message":"extensión"
+   },
+   "language_code":{
+      "message":"es"
+   },
+   "i_star_rating":{
+      "message":"😍 Respuesta de 1 estrella generada"
+   },
+   "ii_star_rating":{
+      "message":"😭 Respuesta de 2 estrellas generada"
+   },
+   "iii_star_rating":{
+      "message":"😢 Respuesta de 3 estrellas generada"
+   },
+   "iv_star_rating":{
+      "message":"🥰 Respuesta de 4 estrellas generada"
+   },
+   "v_star_rating":{
+      "message":"😍 Respuesta de 5 estrellas generada"
+   },
+   "good_morning":{
+      "message":"Buenos días"
+   },
+   "good_afternoon":{
+      "message":"Buenas tardes"
+   },
+   "good_evening":{
+      "message":"Buenas noches"
+   }
+}

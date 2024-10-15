@@ -1,0 +1,113 @@
+{
+   "app_description":{
+      "message":"é uma ferramenta que gera automaticamente respostas personalizadas e relevantes para avaliações de clientes."
+   },
+   "app_description_2":{
+      "message":"Use nosso Gerador de Respostas Aleatórias de Avaliações para reduzir seu tempo de resposta de avaliação pela metade. Basta colar as informações da avaliação no formulário abaixo e nosso"
+   },
+   "app_description_3":{
+      "message":"gerará uma resposta personalizada com base em"
+   },
+   "app_description_4":{
+      "message":"melhores práticas de resposta do avaliador."
+   },
+   "app_description_5":{
+      "message":"Seja respondendo a uma avaliação positiva ou negativa, esta ferramenta ajuda a criar a mensagem perfeita que mostra que você valoriza seus clientes e suas opiniões."
+   },
+   "app_name":{
+      "message":"Gerador de Respostas Aleatórias de Avaliações"
+   },
+   "app_heading":{
+      "message":"Revolucione suas respostas de avaliação com a geração de respostas aleatórias"
+   },
+   "reviewer_name":{
+      "message":"Nome do Avaliador"
+   },
+   "reviewer_name_error":{
+      "message":"Digite o Nome do Avaliador"
+   },
+   "ratings":{
+      "message":"Classificações"
+   },
+   "rating_description":{
+      "message":"Selecione as classificações da avaliação recebida."
+   },
+   "additional_response":{
+      "message":"Resposta adicional"
+   },
+   "additional_response_place":{
+      "message":"Resposta adicional para a Resposta de revisão [entre em contato conosco/informações sobre o produto ou serviço]"
+   },
+   "word_length":{
+      "message":"Comprimento da palavra"
+   },
+   "word_50":{
+      "message":"50 palavras"
+   },
+   "word_100":{
+      "message":"100 palavras"
+   },
+   "product_name":{
+      "message":"Nome do produto"
+   },
+   "required":{
+      "message":"Obrigatório"
+   },
+   "optional":{
+      "message":"Opcional"
+   },
+   "generate_response":{
+      "message":"Gerar resposta"
+   },
+   "replay_to_your_review":{
+      "message":"RESPONDA À SUA AVALIAÇÃO"
+   },
+   "generated_review_response":{
+      "message":"Resposta de avaliação gerada:"
+   },
+   "like":{
+      "message":"Curtir"
+   },
+   "dislike":{
+      "message":"Não curtir"
+   },
+   "copy_response":{
+      "message":"Copiar resposta"
+   },
+   "speak":{
+      "message":"🔊Falar"
+   },
+   "re_generate":{
+      "message":"Gerar novamente"
+   },
+   "extension":{
+      "message":"extension"
+   },
+   "language_code":{
+      "message":"pt"
+   },
+   "i_star_rating":{
+      "message":"😍 Resposta de 1 estrela gerada"
+   },
+   "ii_star_rating":{
+      "message":"😭 Resposta de 2 estrelas gerada"
+   },
+   "iii_star_rating":{
+      "message":"😢 Resposta de 3 estrelas gerada"
+   },
+   "iv_star_rating":{
+      "message":"🥰 Resposta de 4 estrelas gerada"
+   },
+   "v_star_rating":{
+      "message":"😍 Resposta de 5 estrelas gerada"
+   },
+   "good_morning":{
+      "message":"Bom dia"
+   },
+   "good_afternoon":{
+      "message":"Boa tarde"
+   },
+   "good_evening":{
+      "message":"Boa noite"
+   }
+}

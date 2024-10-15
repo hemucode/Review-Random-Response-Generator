@@ -27,31 +27,31 @@ var core = {
     app.contextmenu.create({
       "contexts": ["selection"],
       "id": "5star",
-      "title": "😍 5 Star Response Generated"
+      "title": chrome.i18n.getMessage("v_star_rating")
     }, app.error);
 
     app.contextmenu.create({
       "contexts": ["selection"],
       "id": "4star",
-      "title": "🥰 4 Star Response Generated"
+      "title": chrome.i18n.getMessage("iv_star_rating")
     }, app.error);
 
     app.contextmenu.create({
       "contexts": ["selection"],
       "id": "3star",
-      "title": "😢 3 Star Response Generated"
+      "title": chrome.i18n.getMessage("iii_star_rating")
     }, app.error);
 
     app.contextmenu.create({
       "contexts": ["selection"],
       "id": "2star",
-      "title": "😭 2 Star Response Generated"
+      "title": chrome.i18n.getMessage("ii_star_rating")
     }, app.error);
 
     app.contextmenu.create({
       "contexts": ["selection"],
       "id": "1star",
-      "title": "😍 1 Star Response Generated"
+      "title": chrome.i18n.getMessage("i_star_rating")
     }, app.error);
 
   },
@@ -59,7 +59,7 @@ var core = {
     "storage": function (changes, namespace) {
       /*  */
     },
-    "contextmenu": function (info,tab) {
+    "contextmenu":async function (info,tab) {
       reviewerName = info.selectionText || '';
       menu_Id = info.menuItemId;
       console.log(reviewerName)
@@ -87,33 +87,13 @@ var core = {
       }
 
       if (tab && rating !=0 && rating < 6 && reviewerName != "") {
-          var {response_1 , response_2, random_1, random_2} = generatedResponse(reviewerName, rating, 50, "service");
+          var {response_1 , response_2, random_1, random_2} = await generatedResponse(reviewerName, rating, 50, "service");
           if (response_1 == null) return;
           config.clipboard = response_1;
-          // console.log(response_1);
-          // if(!tab.url.includes("chrome://")) {
-          //   app.tab.inject.js({
-          //     "args": [config.clipboard],
-          //     "target": {"tabId": tab.id},
-          //     "func": function (text) {
-          //       navigator.permissions.query({"name": "clipboard-write"}).then(function (result) {
-          //         if (result) {
-          //           if (result.state === "granted" || result.state === "prompt") {
-          //             navigator.clipboard.writeText(text);
-          //           }
-          //         }
-          //       });
-          //     }
-          //   });
-          // }else{
           app.storage.write("response", response_1);
           const url = app.interface.new_path + '?' + menu_Id;
-
           interface_height = app.interface.height(response_1);
           app.interface.create(url,510,interface_height,null);
-            
-          // }
-
         }
 
     },

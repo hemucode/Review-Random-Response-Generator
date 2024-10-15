@@ -49,6 +49,14 @@ const info = () =>{
   speak = document.querySelector("#speak");
   speak2 = document.querySelector("#speak2");
 
+  
+  str = chrome.i18n == null ? "Generate Response" : chrome.i18n.getMessage("generate_response");
+  document.styleSheets[0].addRule('.genbtn::after','content: "'+str+'";');
+
+  additionalResponse.placeholder = chrome.i18n == null ? 
+  "Additional response for the Review Response[contact us/ product or service information]":
+  chrome.i18n.getMessage("additional_response_place");
+
   submitReview.addEventListener("click", () => {
     generatedBtn(reviewerName, productName);
   });
@@ -132,13 +140,13 @@ const disabledInspect = () =>{
 }
 
 const generatedBtn = (reviewerName, productName) => {
-    reviewerName.value=="" ? (alert(`Please Enter Reviewer Name`)) : 
-    rating()== 0 ? (alert(`Select the ratings of the review received.`)) :
+    reviewerName.value=="" ? (alert(chrome.i18n == null ? "Please Enter Reviewer Name" : chrome.i18n.getMessage("reviewer_name_error"))) : 
+    rating()== 0 ? (alert(chrome.i18n == null ? "Select the ratings of the review received." : chrome.i18n.getMessage("rating_description"))) :
     generatingReview(reviewerName.value, productName.value != "" ? productName.value : "service");
 }
 
-const generatingReview = (name, productName) =>{
-  var {response_1 , response_2, random_1, random_2} = generatedResponse(name, rating(), words.value, productName);
+const generatingReview = async(name, productName) =>{
+  var {response_1 , response_2, random_1, random_2} = await generatedResponse(name, rating(), words.value, productName);
   if (response_1 == null && response_2 == null) return;
 
   regenerate.style.display = "block";
@@ -249,6 +257,22 @@ const rating = () =>{
   }
 }
 
+const translate = () => {
+  return new Promise((resolve) => {
+    const elements = document.querySelectorAll("[data-message]");
+    for (const element of elements) {
+      const key = element.dataset.message;
+      const message = chrome.i18n.getMessage(key);
+      if (message) {
+        element.textContent = message;
+      } else {
+        console.error("Missing chrome.i18n message:", key);
+      }
+    }
+    resolve();
+  });
+}
+
 
 function domReady (callback) {
   if (document.readyState === 'complete') {
@@ -260,6 +284,7 @@ function domReady (callback) {
 
 domReady(() => {
   info()
+  translate()
 })
 
 

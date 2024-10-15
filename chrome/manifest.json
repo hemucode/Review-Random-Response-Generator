@@ -5,7 +5,7 @@
          "48": "data/icons/48.png",
          "64": "data/icons/64.png"
       },
-      "default_title": "Response Generator"
+      "default_title": "__MSG_generate_response__"
    },
    "background": {
       "service_worker": "background.js"
@@ -14,7 +14,7 @@
       "_execute_action": {
       }
    },
-   "description": "it is a tool that automatically generates personalized and relevant responses to customer reviews.",
+   "description": "__MSG_app_description__",
    "homepage_url": "https://www.downloadhub.cloud/",
    "icons": {
       "128": "data/icons/128.png",
@@ -22,8 +22,9 @@
       "48": "data/icons/48.png",
       "64": "data/icons/64.png"
    },
+   "default_locale": "en",
    "manifest_version": 3,
-   "name": "Review Random Response Generator",
+   "name": "__MSG_app_name__",
    "offline_enabled": true,
    "permissions": [ "storage", "activeTab", "scripting", "contextMenus", "clipboardWrite" ],
    "short_name": "review-response",

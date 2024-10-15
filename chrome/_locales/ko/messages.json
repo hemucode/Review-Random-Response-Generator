@@ -1,0 +1,113 @@
+{
+   "app_description":{
+      "message":"고객 리뷰에 대한 개인화되고 관련성 있는 응답을 자동으로 생성하는 도구입니다."
+   },
+   "app_description_2":{
+      "message":"리뷰 랜덤 응답 생성기를 사용하여 리뷰 응답 시간을 절반으로 줄이세요. &nbsp;&nbsp; 리뷰 정보를 아래 양식에 붙여넣기만 하면 됩니다."
+   },
+   "app_description_3":{
+      "message":"다음에 따라 사용자 지정 응답이 생성됩니다."
+   },
+   "app_description_4":{
+      "message":"리뷰어 응답 모범 사례."
+   },
+   "app_description_5":{
+      "message":"긍정적이든 부정적이든 리뷰에 응답하든 이 도구는 고객과 그들의 의견을 소중히 여긴다는 것을 보여주는 완벽한 메시지를 만드는 데 도움이 됩니다."
+   },
+   "app_name":{
+      "message":"무작위 응답 생성기 리뷰"
+   },
+   "app_heading":{
+      "message":"무작위 응답 생성으로 리뷰 응답을 혁신하세요"
+   },
+   "reviewer_name":{
+      "message":"리뷰어 이름"
+   },
+   "reviewer_name_error":{
+      "message":"리뷰어 이름을 입력하세요"
+   },
+   "ratings":{
+      "message":"평점"
+   },
+   "rating_description":{
+      "message":"받은 리뷰의 평가를 선택하세요."
+   },
+   "additional_response":{
+      "message":"추가 응답"
+   },
+   "additional_response_place":{
+      "message":"리뷰 응답에 대한 추가 응답[문의처/제품 또는 서비스 정보]"
+   },
+   "word_length":{
+      "message":"단어 길이"
+   },
+   "word_50":{
+      "message":"50단어"
+   },
+   "word_100":{
+      "message":"100단어"
+   },
+   "product_name":{
+      "message":"제품 이름"
+   },
+   "required":{
+      "message":"필수"
+   },
+   "optional":{
+      "message":"선택 사항"
+   },
+   "generate_response":{
+      "message":"응답 생성"
+   },
+   "replay_to_your_review":{
+      "message":"리뷰에 답장"
+   },
+   "generated_review_response":{
+      "message":"생성된 리뷰 응답:"
+   },
+   "like":{
+      "message":"좋아요"
+   },
+   "dislike":{
+      "message":"싫어요"
+   },
+   "copy_response":{
+      "message":"응답 복사"
+   },
+   "speak":{
+      "message":"🔊말하기"
+   },
+   "re_generate":{
+      "message":"다시 생성"
+   },
+   "extension":{
+      "message":"확대"
+   },
+   "language_code":{
+      "message":"ko"
+   },
+   "i_star_rating":{
+      "message":"😍 1점 응답 생성됨"
+   },
+   "ii_star_rating":{
+      "message":"😭 2점 응답 생성됨"
+   },
+   "iii_star_rating":{
+      "message":"😢 3점 응답 생성됨"
+   },
+   "iv_star_rating":{
+      "message":"🥰 4점 응답 생성됨"
+   },
+   "v_star_rating":{
+      "message":"😍 5점 응답 생성됨"
+   },
+   "good_morning":{
+      "message":"좋은 아침입니다"
+   },
+   "good_afternoon":{
+      "message":"좋은 오후입니다"
+   },
+   "good_evening":{
+      "message":"좋은 저녁입니다"
+   }
+}
