@@ -87,7 +87,10 @@ const LangSwitch = (lang) =>{
       break;
     case 'zh':
       return ZHL;
-      break;                              
+      break; 
+    case 'zh-CN':
+      return ZHL;
+      break;                               
     default:
       return null;
   }

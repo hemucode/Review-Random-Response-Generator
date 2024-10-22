@@ -602,19 +602,6 @@ button#submit-review {
   z-index: 1;
 }
 
-.genbtn::after {
-  position: absolute;
-  display: grid;
-  place-items: center;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  color: white;
-  font-size: 1rem;
-  z-index: 2;
-}
-
 .genbtn:hover {
   animation: cycle 0.8s infinite linear;
 }

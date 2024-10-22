@@ -27,6 +27,39 @@ var reviewCode,
     anime1,
     languge;
 
+const GenBtnText = () => {
+    let headElement = document.head || document.getElementsByTagName("head")[0];
+    let str = chrome.i18n == null ? "Generate Response" : chrome.i18n.getMessage("generate_response");
+
+    if (!headElement) return void setTimeout((() => {
+      GenBtnText();
+    }), 100);
+
+    const newCssContent = `
+    .genbtn::after {
+      content: "${str}";
+      position: absolute;
+      display: grid;
+      place-items: center;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      color: white;
+      font-size: 1rem;
+      z-index: 2;
+    }`;
+
+    if (!document.getElementById("genbtn-style")) {
+      let styleElement = document.createElement("style");
+      styleElement.id = "genbtn-style",
+      styleElement.appendChild(document.createTextNode(newCssContent)), 
+      headElement.appendChild(styleElement);
+    }
+
+  
+}  
+
 const info = () =>{
   reviewerName = document.querySelector("#reviewer-name");
   productName = document.querySelector("#industry-list");
@@ -50,9 +83,6 @@ const info = () =>{
   speak = document.querySelector("#speak");
   speak2 = document.querySelector("#speak2");
 
-  
-  str = chrome.i18n == null ? "Generate Response" : chrome.i18n.getMessage("generate_response");
-  document.styleSheets[0].addRule('.genbtn::after','content: "'+str+'";');
 
   additionalResponse.placeholder = chrome.i18n == null ? 
   "Additional response for the Review Response[contact us/ product or service information]":
@@ -296,6 +326,7 @@ function domReady (callback) {
 domReady(() => {
   info()
   translate()
+  GenBtnText()
 })
 
 

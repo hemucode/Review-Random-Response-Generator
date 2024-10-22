@@ -2,7 +2,7 @@ app.version = function () {return chrome.runtime.getManifest().version};
 app.homepage = function () {return chrome.runtime.getManifest().homepage_url};
 
 if (!navigator.webdriver) {
-  app.on.uninstalled(app.homepage() + "?v=" + app.version() + "&type=uninstall");
+  app.on.uninstalled(app.homepage() +"#uninstall");
   app.on.installed(function (e) {
     app.on.management(function (result) {
       if (result.installType === "normal") {
@@ -10,8 +10,7 @@ if (!navigator.webdriver) {
           let previous = e.previousVersion !== undefined && e.previousVersion !== app.version();
           let doupdate = previous && parseInt((Date.now() - config.welcome.lastupdate) / (24 * 3600 * 1000)) > 45;
           if (e.reason === "install" || (e.reason === "update" && doupdate)) {
-            let parameter = (e.previousVersion ? "&p=" + e.previousVersion : '') + "&type=" + e.reason;
-            let url = app.homepage() + "?v=" + app.version() + parameter;
+            let url = app.homepage();
             app.tab.open(url, index, e.reason === "install");
             config.welcome.lastupdate = Date.now();
           }
