@@ -1,0 +1,140 @@
+{
+  "app_description": {
+    "message": "它是一种自动生成个性化和相关客户评论回复的工具。"
+  },
+  "app_description_2": {
+    "message": "使用我们的评论随机回复生成器将您的评论回复时间缩短一半。 只需将评论信息粘贴到下面的表格中，我们的"
+  },
+  "app_description_3": {
+    "message": "将根据 生成定制回复"
+  },
+  "app_description_4": {
+    "message": "评论者回复最佳实践。"
+  },
+  "app_description_5": {
+    "message": "无论您是回复正面还是负面评论，此工具都可以帮助您制作完美的信息，表明您重视客户及其意见。"
+  },
+  "app_name": {
+    "message": "评论随机响应生成器"
+  },
+  "app_heading": {
+    "message": "通过随机响应生成彻底改变您的评论响应"
+  },
+  "reviewer_name": {
+    "message": "评论者姓名"
+  },
+  "reviewer_name_error": {
+    "message": "请输入评论者姓名"
+  },
+  "ratings": {
+    "message": "评级"
+  },
+  "rating_description": {
+    "message": "选择收到的评论的评级。"
+  },
+  "additional_response": {
+    "message": "附加回复"
+  },
+  "additional_response_place": {
+    "message": "评论回复的附加回复[联系我们/产品或服务信息]"
+  },
+  "word_length": {
+    "message": "字长"
+  },
+  "word_50": {
+    "message": "50 字"
+  },
+  "word_100": {
+    "message": "100 字"
+  },
+  "product_name": {
+    "message": "产品名称"
+  },
+  "required": {
+    "message": "必填"
+  },
+  "optional": {
+    "message": "可选"
+  },
+  "generate_response": {
+    "message": "生成回复"
+  },
+  "replay_to_your_review": {
+    "message": "回复您的评论"
+  },
+  "generated_review_response": {
+    "message": "生成的评论回复："
+  },
+  "like": {
+    "message": "喜欢"
+  },
+  "dislike": {
+    "message": "不喜欢"
+  },
+  "copy_response": {
+    "message": "复制回复"
+  },
+  "speak": {
+    "message": "🔊说话"
+  },
+  "re_generate": {
+    "message": "重新生成"
+  },
+  "extension": {
+    "message": "扩展"
+  },
+  "language_code": {
+    "message": "zh"
+  },
+  "i_star_rating": {
+    "message": "😑 1 星回复已生成"
+  },
+  "ii_star_rating": {
+    "message": "😭 已生成 2 星回复"
+  },
+  "iii_star_rating": {
+    "message": "😢 已生成 3 星回复"
+  },
+  "iv_star_rating": {
+    "message": "🥰 已生成 4 星回复"
+  },
+  "v_star_rating": {
+    "message": "😍 已生成 5 星回复"
+  },
+  "generated": {
+    "message": "已生成"
+  },
+  "total_likes": {
+    "message": "总赞数"
+  },
+  "total_dislikes": {
+    "message": "总踩数"
+  },
+  "settings": {
+    "message": "设置"
+  },
+  "vyw": {
+    "message": "查看您的网站"
+  },
+  "language": {
+    "message": "语言："
+  },
+  "colors": {
+    "message": "颜色："
+  },
+  "einres": {
+    "message": "回复中的表情符号"
+  },
+  "kinres": {
+    "message": "回复中的颜文字"
+  },
+  "help": {
+    "message": "帮助"
+  },
+  "feedback": {
+    "message": "发送反馈"
+  },
+  "ctc":{
+    "message": "已复制到剪贴板"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "app_description": {
+    "message": "고객 리뷰에 대한 개인화되고 관련성있는 응답을 자동으로 생성하는 도구입니다."
+  },
+  "app_description_2": {
+    "message": "검토 무작위 응답 생성기를 사용하여 검토 응답 시간을 반으로 줄입니다.아래 양식과 우리의 검토 정보를 붙여 넣기 만하면"
+  },
+  "app_description_3": {
+    "message": "에 따라 맞춤형 응답을 생성합니다"
+  },
+  "app_description_4": {
+    "message": "검토 자 응답 모범 사례."
+  },
+  "app_description_5": {
+    "message": "긍정적이든 부정적인 검토에 응답하든이 도구는 고객과 의견을 소중히 여기는 완벽한 메시지를 제작하는 데 도움이됩니다."
+  },
+  "app_name": {
+    "message": "임의의 응답 생성기를 검토하십시오"
+  },
+  "app_heading": {
+    "message": "임의의 응답 생성으로 검토 응답을 혁신하십시오"
+  },
+  "reviewer_name": {
+    "message": "리뷰어 이름"
+  },
+  "reviewer_name_error": {
+    "message": "리뷰어 이름을 입력하십시오"
+  },
+  "ratings": {
+    "message": "등급"
+  },
+  "rating_description": {
+    "message": "받은 리뷰의 등급을 선택하십시오."
+  },
+  "additional_response": {
+    "message": "추가 응답"
+  },
+  "additional_response_place": {
+    "message": "검토 응답에 대한 추가 응답 [문의/ 제품 또는 서비스 정보에 문의]"
+  },
+  "word_length": {
+    "message": "단어 길이"
+  },
+  "word_50": {
+    "message": "50 단어"
+  },
+  "word_100": {
+    "message": "100 단어"
+  },
+  "product_name": {
+    "message": "제품 이름"
+  },
+  "required": {
+    "message": "필수의"
+  },
+  "optional": {
+    "message": "선택 과목"
+  },
+  "generate_response": {
+    "message": "응답을 생성합니다"
+  },
+  "replay_to_your_review": {
+    "message": "리뷰에 답장하십시오"
+  },
+  "generated_review_response": {
+    "message": "생성 된 검토 응답 :"
+  },
+  "like": {
+    "message": "좋다"
+  },
+  "dislike": {
+    "message": "싫어함"
+  },
+  "copy_response": {
+    "message": "복사 응답"
+  },
+  "speak": {
+    "message": "speak"
+  },
+  "re_generate": {
+    "message": "다시 생성"
+  },
+  "extension": {
+    "message": "확대"
+  },
+  "language_code": {
+    "message": "ko"
+  },
+  "i_star_rating": {
+    "message": "😑 1 별 응답이 생성되었습니다"
+  },
+  "ii_star_rating": {
+    "message": "😭 2 Star 응답이 생성되었습니다"
+  },
+  "iii_star_rating": {
+    "message": "😢 3 별 응답이 생성되었습니다"
+  },
+  "iv_star_rating": {
+    "message": "🥰 4 별 응답이 생성되었습니다"
+  },
+  "v_star_rating": {
+    "message": "😍 5 별 응답이 생성되었습니다"
+  },
+  "generated": {
+    "message": "생성"
+  },
+  "total_likes": {
+    "message": "총 좋아요"
+  },
+  "total_dislikes": {
+    "message": "총 싫어"
+  },
+  "settings": {
+    "message": "설정"
+  },
+  "vyw": {
+    "message": "웹 사이트를보십시오"
+  },
+  "language": {
+    "message": "언어:"
+  },
+  "colors": {
+    "message": "그림 물감:"
+  },
+  "einres": {
+    "message": "응답으로 이모티콘"
+  },
+  "kinres": {
+    "message": "이모티콘 LES S PONCE"
+  },
+  "help": {
+    "message": "돕다"
+  },
+  "feedback": {
+    "message": "피드백을 보내십시오"
+  },
+   "ctc":{
+    "message": "클립보드에 복사됨"
+  }
+}

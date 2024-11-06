@@ -1,0 +1,140 @@
+{
+  "app_description": {
+    "message": "Es ist ein Tool, das automatisch personalisierte und relevante Antworten auf Kundenbewertungen generiert."
+  },
+  "app_description_2": {
+    "message": "Verwenden Sie unseren Rezensions -Random -Antwortgenerator, um Ihre Überprüfungsantwortzeit in zwei Hälften zu verkürzen.Fügen Sie einfach die Überprüfungsinformationen das folgende Formular und unsere ein"
+  },
+  "app_description_3": {
+    "message": "generiert eine angepasste Antwort basierend auf"
+  },
+  "app_description_4": {
+    "message": "Best Practices der Rezensenten -Antwort."
+  },
+  "app_description_5": {
+    "message": "Unabhängig davon, ob Sie auf eine positive oder negative Bewertung reagieren, hilft Ihnen dieses Tool, die perfekte Botschaft zu erstellen, die Ihnen zeigt, dass Sie Ihre Kunden und ihre Meinungen schätzen."
+  },
+  "app_name": {
+    "message": "Überprüfen Sie den zufälligen Antwortgenerator"
+  },
+  "app_heading": {
+    "message": "Revolutionieren Sie Ihre Überprüfungsantworten mit zufälliger Antwortgenerierung"
+  },
+  "reviewer_name": {
+    "message": "Rezensentenname"
+  },
+  "reviewer_name_error": {
+    "message": "Bitte geben Sie den Bewertungsnamen ein"
+  },
+  "ratings": {
+    "message": "Bewertungen"
+  },
+  "rating_description": {
+    "message": "Wählen Sie die Bewertungen der erhaltenen Überprüfung aus."
+  },
+  "additional_response": {
+    "message": "Zusätzliche Antwort"
+  },
+  "additional_response_place": {
+    "message": "Zusätzliche Antwort für die Überprüfungsantwort [Kontaktieren Sie uns/ Produkt- oder Serviceinformationen]"
+  },
+  "word_length": {
+    "message": "Wortlänge"
+  },
+  "word_50": {
+    "message": "50 Wort"
+  },
+  "word_100": {
+    "message": "100 Wort"
+  },
+  "product_name": {
+    "message": "Produktname"
+  },
+  "required": {
+    "message": "Erforderlich"
+  },
+  "optional": {
+    "message": "Optional"
+  },
+  "generate_response": {
+    "message": "Antwort erzeugen"
+  },
+  "replay_to_your_review": {
+    "message": "Antwort auf Ihre Bewertung"
+  },
+  "generated_review_response": {
+    "message": "Generierte Rezensionsantwort:"
+  },
+  "like": {
+    "message": "Wie"
+  },
+  "dislike": {
+    "message": "Abneigung"
+  },
+  "copy_response": {
+    "message": "Antwort kopieren"
+  },
+  "speak": {
+    "message": "🔊speak"
+  },
+  "re_generate": {
+    "message": "Re erzeugen"
+  },
+  "extension": {
+    "message": "Verlängerung"
+  },
+  "language_code": {
+    "message": "de"
+  },
+  "i_star_rating": {
+    "message": "😑 1 Sternenantwort erzeugt"
+  },
+  "ii_star_rating": {
+    "message": "😭 2 Sterne Reaktion erzeugt"
+  },
+  "iii_star_rating": {
+    "message": "😢 3 Sternenantwort erzeugt"
+  },
+  "iv_star_rating": {
+    "message": "🥰 4 -Sterne -Antwort erzeugt"
+  },
+  "v_star_rating": {
+    "message": "😍 5 -Sterne -Antwort erzeugt"
+  },
+  "generated": {
+    "message": "Generiert"
+  },
+  "total_likes": {
+    "message": "Gesamtlikes"
+  },
+  "total_dislikes": {
+    "message": "Totale Abneigungen"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "vyw": {
+    "message": "Sehen Sie sich Ihre Website an"
+  },
+  "language": {
+    "message": "Sprache:"
+  },
+  "colors": {
+    "message": "Farben:"
+  },
+  "einres": {
+    "message": "Emojis als Antwort"
+  },
+  "kinres": {
+    "message": "Emoticons Les S Ponce"
+  },
+  "help": {
+    "message": "Helfen"
+  },
+  "feedback": {
+    "message": "Feedback senden"
+  },
+  "ctc":{
+    "message": "In die Zwischenablage kopiert"
+  }
+}
