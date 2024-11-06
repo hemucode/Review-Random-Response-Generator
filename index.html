@@ -6,8 +6,8 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/x-icon" href="star-icon-512x488.png">
-		<link type="text/css" rel="stylesheet" href="chrome\data\interface\normalize.css">
-		<link type="text/css" rel="stylesheet" href="chrome\data\interface\style.css">
+		<link type="text/css" rel="stylesheet" href="chrome/data/interface/normalize.css">
+		<link type="text/css" rel="stylesheet" href="chrome/data/interface/style.css">
 
 	</head>
 	<body>
@@ -16,6 +16,7 @@
 		    <div class="ct-section-inner-wrap">
 		      <h1 id="codehemu-headline-1" class="ct-headline">Revolutionize Your Review Responses with Random Response Generation<br> </h1>
 		    </div>
+		    <img class="setting" id="setting" src="chrome/data/icons/setting.svg" title="settings" alt="setting">
 		  </section>
 
 		  <section id="codehemu-section-2" class=" ct-section">
@@ -133,16 +134,290 @@
 		      <button id="refreshPageButton" class="ct-link-button">Re Generate</button> 
 		    </div>
 		  </section>
+
+    <section id="codehemu-section-4">
+      <div class="multi-page-menu-renderer">
+        <div class="header-renderer">
+          <codehemu-img-shadow height="40" width="40">
+            <img draggable="false" alt="" height="40" width="40" src="chrome/data/icons/setting.svg">
+          </codehemu-img-shadow>
+
+          <div class="channel-renderer">
+            <codehemu-formatted-string title="Setting">Settings</codehemu-formatted-string>
+            <formatted-string><a class="complex-string" target="_blank" href="#" dir="auto">View your website</a></formatted-string>
+          </div>
+        </div>
+
+        <div class="sections-renderer">
+          <codehemu-multi-page-menu-section-renderer>
+            <div class="menu-item">
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.21261 10.1737L11.2277 8.56904C12.5302 7.53179 13.1814 7.01316 13.5908 7.26931C14.0001 7.52547 13.7876 8.31864 13.3625 9.905L13.3224 10.0546C13.1691 10.6267 13.0925 10.9128 13.2272 11.1412L13.2344 11.1531C13.3741 11.3788 13.6718 11.4586 14.2673 11.6182C15.339 11.9053 15.8748 12.0489 15.9688 12.4224C15.9704 12.4286 15.9718 12.4348 15.9732 12.441C16.0557 12.8169 15.633 13.1535 14.7876 13.8267L12.7725 15.4314C11.47 16.4686 10.8187 16.9873 10.4094 16.7311C10 16.4749 10.2126 15.6818 10.6377 14.0954L10.6777 13.9459C10.8311 13.3737 10.9077 13.0876 10.773 12.8592L10.7658 12.8473C10.6261 12.6216 10.3283 12.5418 9.73283 12.3823C8.6612 12.0951 8.12538 11.9515 8.03138 11.578C8.02983 11.5718 8.02836 11.5656 8.027 11.5594C7.94449 11.1836 8.36719 10.8469 9.21261 10.1737Z" stroke="#1C274C" stroke-width="1.5" />
+                          <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label0" class="codehemu-toggle-theme-compact-link-renderer">Generated: 200</div>
+                <codehemu-icon>
+                  <span>
+                    <div id="label0_del" class="aas cpointer">
+                      <svg width="24" height="24" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M692.2 182.2V72.9H327.8v109.3H145.6v72.9h728.8v-72.9H692.2z m-291.5 0v-36.4h218.6v36.4H400.7zM730.8 874.5H289.2l-34.3-548.8-72.8 4.5 38.6 617.2h578.6l38.6-617.2-72.8-4.5z" fill="#0F1F3C" />
+                        <path d="M400.7 400.8h72.9v437.3h-72.9zM546.4 400.8h72.9v437.3h-72.9z" fill="#0F1F3C" />
+                      </svg>
+                    </div>
+                  </span>
+                </codehemu-icon>
+              </codehemu-toggle-theme-compact-link-renderer>
+
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0501 7.04419C15.4673 5.79254 14.5357 4.5 13.2163 4.5C12.5921 4.5 12.0062 4.80147 11.6434 5.30944L8.47155 9.75H5.85748L5.10748 10.5V18L5.85748 18.75H16.8211L19.1247 14.1428C19.8088 12.7747 19.5406 11.1224 18.4591 10.0408C17.7926 9.37439 16.8888 9 15.9463 9H14.3981L15.0501 7.04419ZM9.60751 10.7404L12.864 6.1813C12.9453 6.06753 13.0765 6 13.2163 6C13.5118 6 13.7205 6.28951 13.627 6.56984L12.317 10.5H15.9463C16.491 10.5 17.0133 10.7164 17.3984 11.1015C18.0235 11.7265 18.1784 12.6814 17.7831 13.472L15.8941 17.25H9.60751V10.7404ZM8.10751 17.25H6.60748V11.25H8.10751V17.25Z" fill="#1C274C" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label1" class="codehemu-toggle-theme-compact-link-renderer ">Total Likes: 100</div>
+                <codehemu-icon>
+                  <span>
+                    <div id="label1_del" class="aas cpointer">
+                      <svg width="24" height="24" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M692.2 182.2V72.9H327.8v109.3H145.6v72.9h728.8v-72.9H692.2z m-291.5 0v-36.4h218.6v36.4H400.7zM730.8 874.5H289.2l-34.3-548.8-72.8 4.5 38.6 617.2h578.6l38.6-617.2-72.8-4.5z" fill="#0F1F3C" />
+                        <path d="M400.7 400.8h72.9v437.3h-72.9zM546.4 400.8h72.9v437.3h-72.9z" fill="#0F1F3C" />
+                      </svg>
+                    </div>
+                  </span>
+                </codehemu-icon>
+              </codehemu-toggle-theme-compact-link-renderer>
+
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M15.0501 16.9558C15.4673 18.2075 14.5357 19.5 13.2164 19.5C12.5921 19.5 12.0063 19.1985 11.6435 18.6906L8.47164 14.25L5.85761 14.25L5.10761 13.5L5.10761 6L5.85761 5.25L16.8211 5.25L19.1247 9.85722C19.8088 11.2253 19.5407 12.8776 18.4591 13.9592C17.7927 14.6256 16.8888 15 15.9463 15L14.3982 15L15.0501 16.9558ZM9.60761 13.2596L12.8641 17.8187C12.9453 17.9325 13.0765 18 13.2164 18C13.5119 18 13.7205 17.7105 13.6271 17.4302L12.317 13.5L15.9463 13.5C16.491 13.5 17.0133 13.2836 17.3984 12.8985C18.0235 12.2735 18.1784 11.3186 17.7831 10.528L15.8941 6.75L9.60761 6.75L9.60761 13.2596ZM8.10761 6.75L6.60761 6.75L6.60761 12.75L8.10761 12.75L8.10761 6.75Z" fill="#1C274C" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label2" class="codehemu-toggle-theme-compact-link-renderer">Total Dislikes: 10</div>
+                <codehemu-icon>
+                  <span>
+                    <div id="label2_del" class="aas cpointer">
+                      <svg width="24" height="24" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M692.2 182.2V72.9H327.8v109.3H145.6v72.9h728.8v-72.9H692.2z m-291.5 0v-36.4h218.6v36.4H400.7zM730.8 874.5H289.2l-34.3-548.8-72.8 4.5 38.6 617.2h578.6l38.6-617.2-72.8-4.5z" fill="#0F1F3C" />
+                        <path d="M400.7 400.8h72.9v437.3h-72.9zM546.4 400.8h72.9v437.3h-72.9z" fill="#0F1F3C" />
+                      </svg>
+                    </div>
+                  </span>
+                </codehemu-icon>
+              </codehemu-toggle-theme-compact-link-renderer>
+
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.33 6c-1 2.42-2.22 4.65-3.57 6.52l2.98 2.94-.7.71-2.88-2.84c-.53.67-1.06 1.28-1.61 1.83l-3.19 3.19-.71-.71 3.19-3.19c.55-.55 1.08-1.16 1.6-1.83l-.16-.15c-1.11-1.09-1.97-2.44-2.49-3.9l.94-.34c.47 1.32 1.25 2.54 2.25 3.53l.05.05c1.2-1.68 2.29-3.66 3.2-5.81H2V5h6V3h1v2h7v1h-2.67zM22 21h-1l-1.49-4h-5.02L13 21h-1l4-11h2l4 11zm-2.86-5-1.86-5h-.56l-1.86 5h4.28z" fill="#1C274C"></path>
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label3" class="codehemu-toggle-theme-compact-link-renderer">Language:</div>
+                <select name="language" id="language" required="" aria-label="Language">
+                  <option value="en" selected="">English</option>
+                  <option value="de">Deutsch</option>
+                  <option value="es">Español</option>
+                  <option value="pt">Português</option>
+                  <option value="ru">Русский</option>
+                  <option value="ja">日本語</option>
+                  <option value="ko">한국어</option>
+                  <option value="zh">中国人</option>
+                </select>
+
+              </codehemu-toggle-theme-compact-link-renderer>
+            </div>
+
+          </codehemu-multi-page-menu-section-renderer>
+
+
+
+
+          <codehemu-multi-page-menu-section-renderer>
+            <div class="menu-item">
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="9" stroke="#33363F" stroke-width="2" />
+                          <path d="M18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12C3 14.3869 3.94821 16.6761 5.63604 18.364L12 12L18.364 5.63604Z" fill="#33363F" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label4" class="codehemu-toggle-theme-compact-link-renderer">Colors:</div>
+                <input id="color1" class="cpointer" type="color" class="color" name="color3" value="#313856">
+                <input id="color2" class="cpointer" type="color" class="color" name="color3" value="#b2d27d">
+
+              </codehemu-toggle-theme-compact-link-renderer>
+
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" stroke="#1C274C" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 12L7 12M12 17L12 7" />
+                          <circle cx="12" cy="12" r="10" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label5" class="codehemu-toggle-theme-compact-link-renderer">Additional Response</div>
+                <codehemu-icon>
+                  <span>
+                    <div id="save" class="aas cpointer">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                          <path id="Vector" d="M17 21.0002L7 21M17 21.0002L17.8031 21C18.921 21 19.48 21 19.9074 20.7822C20.2837 20.5905 20.5905 20.2843 20.7822 19.908C21 19.4806 21 18.921 21 17.8031V9.21955C21 8.77072 21 8.54521 20.9521 8.33105C20.9095 8.14 20.8393 7.95652 20.7432 7.78595C20.6366 7.59674 20.487 7.43055 20.1929 7.10378L17.4377 4.04241C17.0969 3.66374 16.9242 3.47181 16.7168 3.33398C16.5303 3.21 16.3242 3.11858 16.1073 3.06287C15.8625 3 15.5998 3 15.075 3H6.2002C5.08009 3 4.51962 3 4.0918 3.21799C3.71547 3.40973 3.40973 3.71547 3.21799 4.0918C3 4.51962 3 5.08009 3 6.2002V17.8002C3 18.9203 3 19.4796 3.21799 19.9074C3.40973 20.2837 3.71547 20.5905 4.0918 20.7822C4.5192 21 5.07899 21 6.19691 21H7M17 21.0002V17.1969C17 16.079 17 15.5192 16.7822 15.0918C16.5905 14.7155 16.2837 14.4097 15.9074 14.218C15.4796 14 14.9203 14 13.8002 14H10.2002C9.08009 14 8.51962 14 8.0918 14.218C7.71547 14.4097 7.40973 14.7155 7.21799 15.0918C7 15.5196 7 16.0801 7 17.2002V21M15 7H9" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                      </svg>
+                    </div>
+                  </span>
+                </codehemu-icon>
+              </codehemu-toggle-theme-compact-link-renderer>
+            </div>
+
+          </codehemu-multi-page-menu-section-renderer>
+
+
+          <codehemu-multi-page-menu-section-renderer>
+            <div class="menu-item">
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.9126 15.9336C10.1709 16.249 11.5985 16.2492 13.0351 15.8642C14.4717 15.4793 15.7079 14.7653 16.64 13.863" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+                          <ellipse cx="14.5094" cy="9.77405" rx="1" ry="1.5" transform="rotate(-15 14.5094 9.77405)" fill="#1C274C" />
+                          <ellipse cx="8.71402" cy="11.3278" rx="1" ry="1.5" transform="rotate(-15 8.71402 11.3278)" fill="#1C274C" />
+                          <path d="M13 16.0004L13.478 16.9742C13.8393 17.7104 14.7249 18.0198 15.4661 17.6689C16.2223 17.311 16.5394 16.4035 16.1708 15.6524L15.7115 14.7168" stroke="#1C274C" stroke-width="1.5" />
+                          <path d="M4.92847 4.92663C6.12901 3.72408 7.65248 2.81172 9.41185 2.34029C14.7465 0.910876 20.2299 4.0767 21.6593 9.41136C23.0887 14.746 19.9229 20.2294 14.5882 21.6588C9.25357 23.0882 3.7702 19.9224 2.34078 14.5877C1.86936 12.8284 1.89775 11.0528 2.33892 9.41186" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label6" class="codehemu-toggle-theme-compact-link-renderer">Emojis in response</div>
+                <codehemu-icon>
+                  <span>
+                    <div class="aas"><input type="checkbox" id="box1" name="Emojis in response" checked>
+                    </div>
+                  </span>
+                </codehemu-icon>
+              </codehemu-toggle-theme-compact-link-renderer>
+
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke="#1C274C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 20.064A9 9 0 1 1 21 12v1.5a2.5 2.5 0 0 1-5 0V8m0 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label7" class="codehemu-toggle-theme-compact-link-renderer">kaomoji in response</div>
+                <codehemu-icon>
+                  <span>
+                    <div class="aas"><input type="checkbox" id="box2" name="kaomoji in response" checked>
+                    </div>
+                  </span>
+                </codehemu-icon>
+              </codehemu-toggle-theme-compact-link-renderer>
+            </div>
+
+          </codehemu-multi-page-menu-section-renderer>
+
+
+          <codehemu-multi-page-menu-section-renderer>
+            <div class="menu-item cpointer">
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill="#1C274C" d="M15.36 9.96c0 1.09-.67 1.67-1.31 2.24-.53.47-1.03.9-1.16 1.6l-.04.2H11.1l.03-.28c.14-1.17.8-1.76 1.47-2.27.52-.4 1.01-.77 1.01-1.49 0-.51-.23-.97-.63-1.29-.4-.31-.92-.42-1.42-.29-.59.15-1.05.67-1.19 1.34l-.05.28H8.57l.06-.42c.2-1.4 1.15-2.53 2.42-2.87 1.05-.29 2.14-.08 2.98.57.85.64 1.33 1.62 1.33 2.68zM12 18c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0-15c-4.96 0-9 4.04-9 9s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9m0-1c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path>
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label8" class="codehemu-toggle-theme-compact-link-renderer">Help</div>
+
+              </codehemu-toggle-theme-compact-link-renderer>
+
+              <codehemu-toggle-theme-compact-link-renderer>
+                <div>
+                  <codehemu-icon>
+                    <span class="codehemu-spec-icon-shape">
+                      <div class="aas">
+                        <svg class="aasa" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill="#1C274C" d="M13 14h-2v-2h2v2zm0-9h-2v6h2V5zm6-2H5v16.59l3.29-3.29.3-.3H19V3m1-1v15H9l-5 5V2h16z"></path>
+                        </svg>
+                      </div>
+                    </span>
+                  </codehemu-icon>
+                </div>
+                <div id="label9" class="codehemu-toggle-theme-compact-link-renderer">Send feedback</div>
+
+              </codehemu-toggle-theme-compact-link-renderer>
+            </div>
+
+          </codehemu-multi-page-menu-section-renderer>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+    <div id="flymessage" class="alert alert-danger flyover flyover-bottom"> <p> Copied to Clipboard </p> </div>
 		</div>
-		<script type="text/javascript" src="chrome\data\interface\json\de_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\en_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\ja_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\es_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\ko_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\pt_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\ru_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\json\zh_rating.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\generated.js"></script>
-		<script type="text/javascript" src="chrome\data\interface\index.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/de_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/en_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/ja_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/es_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/ko_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/pt_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/ru_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/json/zh_rating.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/generated.js"></script>
+		<script type="text/javascript" src="chrome/data/interface/index.js"></script>
 	</body>
 </html>

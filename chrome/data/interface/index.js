@@ -1,41 +1,130 @@
 var reviewCode, 
     reviewCode2,
-    reviewerName,
-    productName,
-    regenerate,
-    submitReview,
-    additionalResponse,
-    words,
-    reviewText,
-    reviewText2,
-    regenerate,
-    generatedReview,
-    generatedReview2,
-    reviewLike1,
-    reviewLike2,
-    reviewDislike1,
-    reviewDislike2,
+    responsePromise,
     full_response,
     full_response1,
-    ai_dot,
-    ai_dot1,
-    copyBtn,
-    copyBtn2,
-    speak,
-    speak2,
     anime,
     anime1,
-    languge;
+    languge,
+    oneTime;
 
-const GenBtnText = () => {
+const $ = (element)=>{
+ return document.querySelector(element);
+}
+
+const details = {
+  "WEBSTORE": chrome.runtime == undefined ? "" : `https://chrome.google.com/webstore/detail/${chrome.runtime.id}`,
+  "HOMEPAGE": chrome.runtime == undefined ? "https://www.downloadhub.cloud/2024/10/RandomReviewResponseGenerator.html" : chrome.runtime.getManifest().homepage_url,
+  "SITE": "https://www.downloadhub.cloud/"
+} 
+
+
+const linkAdd = () =>{
+  $(".extensionurl") ? $(".extensionurl").href = details.WEBSTORE : null;
+  $("#extensionurl1") ? $("#extensionurl1").href = details.HOMEPAGE : null;
+  $(".complex-string") ? $(".complex-string").href = details.SITE : null;
+}
+
+
+const settingsload = async() =>{
+  if (chrome.storage != undefined) {
+    responsePromise = new Promise(function(resolve, reject){
+        chrome.storage.local.get({
+          "generated": 0,
+          "languges": chrome.i18n == null ? "en" : chrome.i18n.getMessage("language_code"),
+          "top_color": "#313856",
+          "buttom_color": "#b2d27d",
+          "box1": true,
+          "box2": false
+        }, function(options){
+            resolve(options);
+        })
+    });
+
+    responseOptions = await responsePromise;
+    generated = responseOptions.generated;
+    languges = responseOptions.languges;
+    top_color = responseOptions.top_color;
+    buttom_color = responseOptions.buttom_color;
+    box1 = responseOptions.box1;
+    box2 = responseOptions.box2;
+  }else{
+    generated = localStorage.generated == null ? 0 : typeof Number(localStorage.generated) ==='number' ? localStorage.generated : 0;
+    languges = localStorage.languges == null ? "en" : localStorage.languges;
+    top_color = localStorage.top_color == null ? "#313856" : localStorage.top_color;
+    buttom_color = localStorage.buttom_color == null ? "#b2d27d" : localStorage.buttom_color;
+    box1 = localStorage.box1 == null ? true : localStorage.box1 ==='true'?true:false;
+    box2 = localStorage.box1 == null ? false : localStorage.box2 ==='true'?true:false;
+  }
+
+  $("#box1").checked = box1;
+  $("#box2").checked = box2;
+
+  $("#color1").value = top_color;
+  $("#color2").value = buttom_color;
+
+  $("#label0").innerText = chrome.i18n == null ? "Generated: " + generated : 
+  chrome.i18n.getMessage("generated")+": "+generated;
+
+  $("#language").value = languges;
+
+  let like_no = 0;
+  let dislike_no = 0;
+
+  $("#label1").innerText = chrome.i18n == null ? "Total Likes: " + like_no : 
+      chrome.i18n.getMessage("total_likes")+": "+like_no;
+
+  $("#label2").innerText = chrome.i18n == null ? "Total DisLikes: " + dislike_no : 
+      chrome.i18n.getMessage("total_dislikes")+": "+dislike_no;
+
+
+  for (let i = 0; i < localStorage.length; i++) {
+    key_value = localStorage.key(i);
+    if (key_value != null) {
+      lastChar = key_value.charAt(key_value.length - 1);
+      localStorage.getItem(key_value) == "true" ? lastChar == null ? null :
+      lastChar == "L" ? like_no++ : lastChar == "D" ? dislike_no++ :null :null;
+
+      $("#label1").innerText = chrome.i18n == null ? "Total Likes: " + like_no : 
+          chrome.i18n.getMessage("total_likes")+": "+like_no;
+
+      $("#label2").innerText = chrome.i18n == null ? "Total DisLikes: " + dislike_no : 
+          chrome.i18n.getMessage("total_dislikes")+": "+dislike_no;  
+    }  
+  }
+
+}
+
+const styleSheets = async() => {
     let headElement = document.head || document.getElementsByTagName("head")[0];
     let str = chrome.i18n == null ? "Generate Response" : chrome.i18n.getMessage("generate_response");
 
     if (!headElement) return void setTimeout((() => {
-      GenBtnText();
+      styleSheets();
     }), 100);
+    if (chrome.storage != undefined) {
+      responsePromise = new Promise((resolve, reject)=>{
+          chrome.storage.local.get({
+            "top_color": "#313856",
+            "buttom_color": "#b2d27d"
+          }, (options)=>{
+              resolve(options);
+          })
+      });
+
+      responseOptions = await responsePromise;
+      top_color = responseOptions.top_color;
+      buttom_color = responseOptions.buttom_color;
+    }else{
+      top_color = localStorage.top_color == null ? "#313856" : localStorage.top_color;
+      buttom_color = localStorage.buttom_color == null ? "#b2d27d" : localStorage.buttom_color;
+    }
 
     const newCssContent = `
+    body {
+      --codehemu-color1: ${top_color}!important;
+      --codehemu-color2: ${buttom_color}!important;
+    }
     .genbtn::after {
       content: "${str}";
       position: absolute;
@@ -50,69 +139,166 @@ const GenBtnText = () => {
       z-index: 2;
     }`;
 
-    if (!document.getElementById("genbtn-style")) {
+    if (!$("#myStyle")) {
       let styleElement = document.createElement("style");
-      styleElement.id = "genbtn-style",
+      styleElement.id = "myStyle",
       styleElement.appendChild(document.createTextNode(newCssContent)), 
       headElement.appendChild(styleElement);
+    }else{
+      $("#myStyle").appendChild(document.createTextNode(newCssContent));
     }
 
   
 }  
 
-const info = () =>{
-  reviewerName = document.querySelector("#reviewer-name");
-  productName = document.querySelector("#industry-list");
-  regenerate = document.querySelector("#refreshPageButton");
-  submitReview = document.querySelector("#submit-review");
-  additionalResponse = document.querySelector("#review-text");
-  words = document.querySelector("#tone");
-  reviewText = document.querySelector(".review-text");
-  reviewText2 = document.querySelector(".review-text2");
-  regenerate = document.querySelector("#refreshPageButton");
-  generatedReview = document.querySelector("#code_block-211");
-  generatedReview2 = document.querySelector("#code_block-212");
-  reviewLike1 = document.querySelector("#like-button");
-  reviewLike2 = document.querySelector("#like-button2");
-  reviewDislike1 = document.querySelector("#dislike-button");
-  reviewDislike2 = document.querySelector("#dislike-button2");
-  ai_dot = document.querySelector("#ai_dot");
-  ai_dot1 = document.querySelector("#ai_dot1");
-  copyBtn = document.querySelector("#copyBtn");
-  copyBtn2 = document.querySelector("#copyBtn2");
-  speak = document.querySelector("#speak");
-  speak2 = document.querySelector("#speak2");
 
 
-  additionalResponse.placeholder = chrome.i18n == null ? 
+const info = async() =>{
+  if (chrome.storage != undefined) {
+    responsePromise = new Promise((resolve, reject) =>{
+        chrome.storage.local.get({
+          "additional": "",
+        }, (options)=>{
+            resolve(options);
+        })
+    });
+    responseOptions = await responsePromise;
+    additional = responseOptions.additional;
+  }else{
+    additional = localStorage.additional == null ? '' : localStorage.additional;
+  }
+  $("#review-text").value = additional;
+
+
+  $("#save").addEventListener("click", async() => {
+     $("#review-text").style.border = "3px solid #ff0000";
+     setTimeout(()=>{
+        $("#review-text").style.border = "1px solid #ccc";
+     },2000);
+     additional = $("#review-text").value;
+     chrome.storage != undefined ? await chrome.storage.local.set({ additional }) : null;
+     localStorage.additional = additional;
+     alert("Additional Response Save!");
+  });
+
+  $("#setting").addEventListener("click", () => {
+    settingsload();
+    $("#codehemu-section-4") ? 
+    $("#codehemu-section-4").style.display = $("#codehemu-section-4").style.display == "block" ? "none" : "block" : null;
+  });
+
+  window.addEventListener('scroll', ()=> {
+       $("#codehemu-section-4") ? $("#codehemu-section-4").style.display = "none" : null;
+  });
+
+  $("#label8").addEventListener("click", () => {
+    openTab(details.HOMEPAGE);
+  });
+  $("#label9").addEventListener("click", () => {
+    openTab(details.HOMEPAGE+"#uninstall");
+  });
+
+  $("#review-text").placeholder = chrome.i18n == null ? 
   "Additional response for the Review Response[contact us/ product or service information]":
   chrome.i18n.getMessage("additional_response_place");
 
-  submitReview.addEventListener("click", () => {
-    generatedBtn(reviewerName, productName);
+  $("#submit-review").addEventListener("click", () => {
+    generatedBtn($("#reviewer-name"), $("#industry-list"));
   });
 
-  regenerate.addEventListener("click", () => {
-    generatedBtn(reviewerName, productName);
+  $("#refreshPageButton").addEventListener("click", () => {
+    generatedBtn($("#reviewer-name"), $("#industry-list"));
   });
 
-  reviewLike1.addEventListener("click", () => {
-    storageLikeDislike(reviewCode, reviewLike1 ,reviewDislike1);
-    // console.log(reviewCode);
+  $("#like-button").addEventListener("click", () => {
+    storageLikeDislike(reviewCode, $("#like-button") ,$("#dislike-button"));
   });
 
-  reviewDislike1.addEventListener("click", () => {
-    storageLikeDislike(reviewCode, reviewDislike1, reviewLike1);
+  $("#like-button2").addEventListener("click", () => {
+    storageLikeDislike(reviewCode2, $("#like-button2") ,$("#dislike-button2"));
   });
 
-  reviewLike2.addEventListener("click", () => {
-    storageLikeDislike(reviewCode2, reviewLike2 ,reviewDislike2);
-    console.log(reviewCode);
+  $("#dislike-button").addEventListener("click", () => {
+    storageLikeDislike(reviewCode, $("#dislike-button"), $("#like-button"));
   });
 
-  reviewDislike2.addEventListener("click", () => {
-    storageLikeDislike(reviewCode2, reviewDislike2, reviewLike2);
+  $("#dislike-button2").addEventListener("click", () => {
+    storageLikeDislike(reviewCode2,$("#dislike-button2"), $("#like-button2"));
   });
+
+
+  $("#box1").addEventListener("change", async (event) => {
+    const box1 = event.currentTarget.checked;
+    chrome.storage != undefined ? await chrome.storage.local.set({ box1 }) : null;
+    localStorage.box1 = box1;
+  });
+
+  $("#box2").addEventListener("change", async (event) => {
+    const box2 = event.currentTarget.checked;
+    chrome.storage != undefined ? await chrome.storage.local.set({ box2 }) : null;
+    localStorage.box2 = box2;
+  });
+
+  $("#color1").addEventListener("change", async (event) => {
+    const top_color = event.currentTarget.value;
+    localStorage.top_color = top_color;
+    chrome.storage != undefined ? await chrome.storage.local.set({ top_color }) : null;
+    $("#color1").value = top_color;
+    styleSheets();
+  });
+
+  $("#color2").addEventListener("change", async (event) => {
+    const buttom_color = event.currentTarget.value;
+    chrome.storage != undefined ? await chrome.storage.local.set({ buttom_color }) : null;
+    localStorage.buttom_color = buttom_color;
+    $("#color2").value = buttom_color;
+    styleSheets();
+  });
+
+  $("#label1_del").addEventListener("click", () => {
+    for (let i = 0; i < localStorage.length; i++) {
+      key_value = localStorage.key(i);
+      lastChar = key_value == null ? null : key_value.charAt(key_value.length - 1);
+      localStorage.getItem(key_value) == "true" ? lastChar==null ? null: lastChar == "L"? localStorage.setItem(key_value, false) :null :null;
+    }
+
+    $("#like-button") ? $("#like-button").style.background = "" : null;
+    $("#like-button2") ? $("#like-button2").style.background = "" : null;
+    $("#label1").innerText = chrome.i18n == null ? "Total Likes: 0": chrome.i18n.getMessage("total_likes")+": 0";
+  });
+
+  $("#label2_del").addEventListener("click", () => {
+    for (let i = 0; i < localStorage.length; i++) {
+      key_value = localStorage.key(i);
+      lastChar = key_value == null ? null : key_value.charAt(key_value.length - 1);
+      localStorage.getItem(key_value) == "true" ? lastChar==null ? null: lastChar == "D"? localStorage.setItem(key_value, false) :null :null;
+    }
+
+    $("#dislike-button") ? $("#dislike-button").style.background = "" : null;
+    $("#dislike-button2")? $("#dislike-button2").style.background = "" : null;
+    $("#label2").innerText = chrome.i18n == null ? "Total DisLikes: " + 0 : chrome.i18n.getMessage("total_dislikes")+": 0";
+  });
+
+  $("#label0_del").addEventListener("click", async () => {
+    const generated = 0;
+    $("#label0").innerText = chrome.i18n == null ? "Generated: " + generated : 
+    chrome.i18n.getMessage("generated")+": "+generated;
+    chrome.storage != undefined ? await chrome.storage.local.set({ generated }) : null;
+    localStorage.generated = generated;
+  });
+
+  $("#language").addEventListener("change", async (event) => {
+    const languges = event.currentTarget.value;
+    chrome.storage != undefined ? await chrome.storage.local.set({ languges }) : null;
+    localStorage.languges = languges;
+  });
+
+
+  copyResponse();
+  chrome.i18n ? translate() : null;
+  linkAdd();
+  disabledInspect();
+
 
   if (speechSynthesis == undefined) return;
 
@@ -120,22 +306,20 @@ const info = () =>{
   message.volume = 1; // Volume range = 0 - 1
   message.rate = 1.1; // Speed of the text read , default 1 // change voice
 
-  speak.addEventListener("click", () => {
+  $("#speak").addEventListener("click", () => {
     message.lang = languge == null ? 'en' : languge;
     message.text = full_response;
     full_response == null ?  null : full_response == "" ? null : 
     window.speechSynthesis.speak(message);
   });
 
-  speak2.addEventListener("click", () => {
+  $("#speak2").addEventListener("click", () => {
     message.lang = languge == null ? 'en' : languge;
     message.text = full_response1;
     full_response1 == null ?  null : full_response1 == "" ? null : 
     window.speechSynthesis.speak(message);
   });
 
-  copyResponse();
-  // disabledInspect();
 
 }
 
@@ -180,37 +364,39 @@ const disabledInspect = () =>{
   }catch(e){ return; }
 }
 
-const generatedBtn = (reviewerName, productName) => {
+const generatedBtn = async(reviewerName, productName) => {
     reviewerName.value=="" ? (alert(chrome.i18n == null ? "Please Enter Reviewer Name" : chrome.i18n.getMessage("reviewer_name_error"))) : 
     rating()== 0 ? (alert(chrome.i18n == null ? "Select the ratings of the review received." : chrome.i18n.getMessage("rating_description"))) :
     generatingReview(reviewerName.value, productName.value != "" ? productName.value : "service");
 }
 
 const generatingReview = async(name, productName) =>{
-  var {response_1 , response_2, random_1, random_2, LANGUAGE_CODE} = await generatedResponse(name, rating(), words.value, productName);
+  additionals = $("#review-text").value;
+  $("#div_block-212").style.display =  window.innerWidth<=400 ? "none":"block";
+
+  var {response_1 , response_2, random_1, random_2, LANGUAGE_CODE} = await generatedResponse(name, rating(), $("#tone").value, productName, additionals);
+
   if (response_1 == null && response_2 == null) return;
   languge = LANGUAGE_CODE;
-  regenerate.style.display = "block";
-  generatedReview.style.display = "block";
-  generatedReview2.style.display = "block";
-  ai_dot.style.visibility = "visible";
-  ai_dot1.style.visibility = "visible";
-  copyBtn.disabled = true;
-  copyBtn2.disabled = true;
-  speak.disabled = true;
-  speak2.disabled = true;
+
+  block = ["#refreshPageButton","#code_block-211","#code_block-212"];
+  for(b of block){$(b) ? $(b).style.display = "block" : null;}
+
+  disabled_element = ["#copyBtn","#copyBtn2","#speak","#speak2"];
+  for(d of disabled_element){$(d) ? $(d).disabled = true : null; }
+
+  $("#ai_dot").style.visibility = "visible";
+  $("#ai_dot1").style.visibility = "visible";
 
   anime != null ? clearInterval(anime) : null;
   anime1 != null ? clearInterval(anime1) : null;
 
-  reviewText.innerText = "";
-  reviewText2.innerText = "";
+  $(".review-text").innerText = "";
+  $(".review-text2").innerText = "";
 
-  full_response = `${response_1}
-  ${additionalResponse.value}`;
+  full_response = response_1;
 
-  full_response1 = `${response_2}
-  ${additionalResponse.value}`;
+  full_response1 = response_2;
 
   const words2 = full_response.split(" ");
   const words1 = full_response1.split(" ");
@@ -218,11 +404,11 @@ const generatingReview = async(name, productName) =>{
   i = 0;
   anime = setInterval(()=>{
     if (i < words2.length) {
-      reviewText.innerText += ` ${words2[i]}`;
+      $(".review-text").innerText += ` ${words2[i]}`;
     }else if(i > words2.length){
-      ai_dot.style.visibility = "hidden";
-      copyBtn.disabled = false;
-      speak.disabled = false;
+      $("#ai_dot").style.visibility = "hidden";
+      $("#copyBtn").disabled = false;
+      $("#speak").disabled = false;
       clearInterval(anime);
     }
     i++;
@@ -232,11 +418,11 @@ const generatingReview = async(name, productName) =>{
   i2 = 0;
   anime1 = setInterval(()=>{
     if (i2 < words1.length) {
-      reviewText2.innerText += ` ${words1[i2]}`;
+      $(".review-text2").innerText += ` ${words1[i2]}`;
     }else if(i2 > words1.length){
-      ai_dot1.style.visibility = "hidden";
-      copyBtn2.disabled = false;
-      speak2.disabled = false;
+      $("#ai_dot1").style.visibility = "hidden";
+      $("#copyBtn2").disabled = false;
+      $("#speak2").disabled = false;
       clearInterval(anime1);
     }
     i2++;
@@ -245,39 +431,40 @@ const generatingReview = async(name, productName) =>{
 
   window.scrollTo(0, document.body.scrollHeight);
 
-  reviewCode = words.value.toString() + random_1.toString();
-  reviewCode2 = words.value.toString() + random_2.toString();
+  reviewCode = $("#tone").value.toString() + random_1.toString();
+  reviewCode2 = $("#tone").value.toString() + random_2.toString();
 
 
-  reviewLike1.style.background = JSON.parse(localStorage.getItem(reviewCode+"L")) ? "#35b3ff" : "";
-  reviewLike2.style.background = JSON.parse(localStorage.getItem(reviewCode+"L")) ? "#35b3ff" : "";
+  $("#like-button").style.background = JSON.parse(localStorage.getItem(reviewCode+"L")) ? "#35b3ff" : "";
+  $("#like-button2").style.background = JSON.parse(localStorage.getItem(reviewCode+"L")) ? "#35b3ff" : "";
 
-  reviewDislike1.style.background = JSON.parse(localStorage.getItem(reviewCode+"D")) ? "#ff0000" : "";
-  reviewDislike2.style.background = JSON.parse(localStorage.getItem(reviewCode+"D")) ? "#ff0000" : "";
+  $("#dislike-button").style.background = JSON.parse(localStorage.getItem(reviewCode+"D")) ? "#ff0000" : "";
+  $("#dislike-button2").style.background = JSON.parse(localStorage.getItem(reviewCode+"D")) ? "#ff0000" : "";
 }
 
 
 
 const storageLikeDislike = (reviewCode, target, secend_target) => {
-
   storage_data = localStorage.getItem(reviewCode + target.value);
   enabled = storage_data == null ? true : JSON.parse(storage_data) ? false : true;
   color = target.value == "L" ? "#35b3ff" : "#ff0000";
   target.style.background = enabled ? color : "" ;
   secend_target.style.background = "";
-
   localStorage.setItem((reviewCode + target.value), enabled);
   localStorage.setItem((reviewCode + secend_target.value), false);
 }
 
 
 const copyResponse = () =>{
-
-  copyBtn.addEventListener("click", ()=>{
-     navigator.clipboard.writeText(reviewText.innerText);
+  $("#copyBtn").addEventListener("click", ()=>{
+    $("#flymessage").classList.add("in");
+    navigator.clipboard.writeText($(".review-text").innerText);
+    setTimeout(()=>{$("#flymessage").classList.remove("in")},2000);
   });  
-  copyBtn2.addEventListener("click", ()=>{
-     navigator.clipboard.writeText(reviewText2.innerText);
+  $("#copyBtn2").addEventListener("click", ()=>{
+    $("#flymessage").classList.add("in");
+    navigator.clipboard.writeText($(".review-text2").innerText);
+    setTimeout(()=>{$("#flymessage").classList.remove("in")},2000);
   });
 }
 
@@ -314,6 +501,9 @@ const translate = () => {
   });
 }
 
+const openTab = (url) =>{
+  window.open(url,'_blank');
+}
 
 function domReady (callback) {
   if (document.readyState === 'complete') {
@@ -325,8 +515,7 @@ function domReady (callback) {
 
 domReady(() => {
   info()
-  translate()
-  GenBtnText()
+  styleSheets()
 })
 
 

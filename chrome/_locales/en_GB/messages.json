@@ -3,7 +3,7 @@
       "message": "it is a tool that automatically generates personalized and relevant responses to customer reviews."
    },
    "app_description_2": {
-      "message": "Use our Review Random Response Generator to cut your review reply time in half. &nbsp;&nbsp; Simply paste the review information the form below and our"
+      "message": "Use our Review Random Response Generator to cut your review reply time in half. Simply paste the review information the form below and our"
    },
    "app_description_3": {
       "message": "will generate a customized response based on"
@@ -87,7 +87,7 @@
       "message" :"en"
    },
    "i_star_rating":{
-      "message" :"😍 1 Star Response Generated"
+      "message" :"😑 1 Star Response Generated"
    },
    "ii_star_rating":{
       "message" :"😭 2 Star Response Generated"
@@ -100,5 +100,41 @@
    },
    "v_star_rating":{
       "message" :"😍 5 Star Response Generated"
+   },
+   "generated":{
+      "message" :"Generated"
+   },
+   "total_likes":{
+      "message" :"Total Likes"
+   },
+   "total_dislikes":{
+      "message" :"Total Dislikes"
+   },
+   "settings":{
+      "message" :"Settings"
+   },
+   "vyw":{
+      "message" :"View your website"
+   },
+   "language":{
+      "message" :"Language:"
+   },
+   "colors":{
+      "message" :"Colors:"
+   },
+   "einres":{
+      "message" :"Emojis in response"
+   },
+   "kinres":{
+      "message" :"kaomoji in response"
+   },
+   "help":{
+      "message" :"Help"
+   },
+   "feedback":{
+      "message" :"Send feedback"
+   },
+   "ctc":{
+      "message": "Copied to Clipboard"
    }
 }
